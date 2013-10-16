@@ -22,10 +22,10 @@
 					case 'rebuild':
 						foreach ($checked as $handle) {
 							try {
-  							ElasticSearch::getIndex()->getType($handle)->delete();
-	            } catch (Exception $e) {
-	            	
-	            }
+  								ElasticSearch::getIndex()->getType($handle)->delete();
+  							} catch (Exception $e) {
+  							
+  							}
 							ElasticSearch::createType($handle);
 							redirect("{$this->uri}/mappings/");
 						}
